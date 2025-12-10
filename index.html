@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Claus Inck</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&display=swap" rel="stylesheet">
@@ -15,77 +15,77 @@
     }
 
     body {
-      background: #e6f7ff;
-      color: #003366;
+      background: #f2f9fc;
+      color: #002b45;
       font-family: 'Chivo', sans-serif;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .container {
-      max-width: 800px;
-      padding: 40px;
-      text-align: left;
-      animation: fadein 1s ease-out forwards;
+      max-width: 760px;
+      padding: 48px;
       position: relative;
+      animation: fadein 0.8s ease-out forwards;
+    }
+
+    h1 {
+      font-size: 2.4em;
+      margin-bottom: 24px;
+    }
+
+    p {
+      font-size: 1.15em;
+      line-height: 1.7;
+      margin-bottom: 16px;
+    }
+
+    a {
+      color: #005d8f;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(0, 93, 143, 0.3);
+    }
+
+    a:hover {
+      border-bottom-color: transparent;
     }
 
     .lang-toggle {
       position: absolute;
-      top: 10px;
-      right: 10px;
-      font-size: 0.9em;
+      top: 20px;
+      right: 20px;
     }
 
     .lang-toggle button {
       background: none;
-      border: 1px solid #003366;
-      color: #003366;
-      padding: 5px 10px;
+      border: 1px solid #002b45;
+      color: #002b45;
+      font-weight: 700;
+      padding: 4px 10px;
       cursor: pointer;
-      margin-left: 5px;
-      font-weight: bold;
+      margin-left: 6px;
+      font-size: 0.85em;
     }
 
     .lang-toggle button.active {
-      background: #003366;
-      color: #e6f7ff;
-    }
-
-    p {
-      font-size: 1.2em;
-      margin-bottom: 15px;
-      line-height: 1.6;
-    }
-
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-    }
-
-    a {
-      color: #00509e;
-      text-decoration: underline;
-    }
-
-    a:hover {
-      text-decoration: none;
+      background: #002b45;
+      color: #f2f9fc;
     }
 
     [data-lang] {
       display: none;
     }
 
-    [data-lang="en"] {
+    [data-lang].active {
       display: block;
     }
 
     @keyframes fadein {
       from {
         opacity: 0;
-        transform: translateY(20px);
+        transform: translateY(12px);
       }
       to {
         opacity: 1;
@@ -104,56 +104,39 @@
     </div>
 
     <h1>
-      <span data-lang="en">Hello. I'm Claus Inck.</span>
-      <span data-lang="pt">Olá. Eu sou Claus Inck.</span>
+      <span data-lang="en" class="active">Claus Inck</span>
+      <span data-lang="pt">Claus Inck</span>
     </h1>
 
     <p>
-      <span data-lang="en">
-        Master in Biological Oceanography, calisthenics enthusiast, runner, and advocate for healthy living.
+      <span data-lang="en" class="active">
+        Master’s degree in Biological Oceanography. Researcher focused on zooplankton communities and their relationship with oceanographic processes and climate change.
       </span>
       <span data-lang="pt">
-        Mestre em Oceanografia Biológica, entusiasta da calistenia, corredor e defensor de um estilo de vida saudável.
+        Mestre em Oceanografia Biológica. Pesquisador com foco em comunidades zooplanctônicas e sua relação com processos oceanográficos e mudanças climáticas.
       </span>
     </p>
 
     <p>
-      <span data-lang="en">
-        My professional life is dedicated to ocean research, with a special focus on zooplankton communities and their relationship with climate change.
+      <span data-lang="en" class="active">
+        My work is driven by curiosity about how the ocean functions as a living system, and how small organisms play a fundamental role in sustaining life on Earth.
       </span>
       <span data-lang="pt">
-        Minha vida profissional é dedicada à pesquisa oceanográfica, com foco especial nas comunidades de zooplâncton e sua relação com as mudanças climáticas.
+        Meu trabalho é guiado pela curiosidade sobre o oceano como sistema vivo e sobre como organismos microscópicos desempenham um papel fundamental na sustentação da vida na Terra.
       </span>
     </p>
 
     <p>
-      <span data-lang="en">
-        In my free time, I practice calisthenics and running, seeking continuous improvement through discipline, movement, and mindfulness.
+      <span data-lang="en" class="active">
+        Outside academia, I practice calisthenics and running as tools for consistency, body awareness, and long-term health.
       </span>
       <span data-lang="pt">
-        No tempo livre, pratico calistenia e corrida, buscando evolução contínua por meio da disciplina, do movimento e da atenção plena.
+        Fora da academia, pratico calistenia e corrida como ferramentas de consistência, consciência corporal e saúde a longo prazo.
       </span>
     </p>
 
     <p>
-      <span data-lang="en">
-        I am inspired by initiatives such as 
-        <a target="_blank" href="https://communications-assets.unglobalcompact.org/docs/publications/PlanktonManifesto_MG_DIGITAL-2.pdf">
-          The Plankton Manifesto
-        </a>, 
-        which highlights the fundamental role of plankton in sustaining life on Earth.
-      </span>
-      <span data-lang="pt">
-        Sou inspirado por iniciativas como o 
-        <a target="_blank" href="https://communications-assets.unglobalcompact.org/docs/publications/PlanktonManifesto_MG_DIGITAL-2.pdf">
-          Manifesto do Plâncton
-        </a>, 
-        que destaca o papel fundamental do plâncton na sustentação da vida na Terra.
-      </span>
-    </p>
-
-    <p>
-      <span data-lang="en">
+      <span data-lang="en" class="active">
         Current goals: consolidate the muscle-up in calisthenics and run 5 km under 20 minutes.
       </span>
       <span data-lang="pt">
@@ -162,22 +145,35 @@
     </p>
 
     <p>
-      <span data-lang="en">
-        Quote that inspires me: <em>"No water, no life. No blue, no green." — Sylvia Earle</em>
+      <span data-lang="en" class="active">
+        <strong>Book recommendation:</strong> <em>Autobiography of a Yogi</em> — Paramahansa Yogananda.
       </span>
       <span data-lang="pt">
-        Frase que me inspira: <em>"Sem água não há vida. Sem azul não há verde." — Sylvia Earle</em>
+        <strong>Recomendação de livro:</strong> <em>Autobiografia de um Iogue</em> — Paramahansa Yogananda.
       </span>
     </p>
 
     <p>
-      <span data-lang="en">
-        Find me on <a target="_blank" href="https://www.youtube.com/@clausinck">YouTube</a> and 
-        <a target="_blank" href="https://www.strava.com/athletes/107160155">Strava</a>.
+      <span data-lang="en" class="active">
+        <strong>Article recommendation:</strong>
+        <a target="_blank" href="https://communications-assets.unglobalcompact.org/docs/publications/PlanktonManifesto_MG_DIGITAL-2.pdf">
+          The Plankton Manifesto
+        </a>.
       </span>
       <span data-lang="pt">
-        Me encontre no <a target="_blank" href="https://www.youtube.com/@clausinck">YouTube</a> e no 
-        <a target="_blank" href="https://www.strava.com/athletes/107160155">Strava</a>.
+        <strong>Recomendação de artigo:</strong>
+        <a target="_blank" href="https://communications-assets.unglobalcompact.org/docs/publications/PlanktonManifesto_MG_DIGITAL-2.pdf">
+          O Manifesto do Plâncton
+        </a>.
+      </span>
+    </p>
+
+    <p>
+      <span data-lang="en" class="active">
+        Find me on <a target="_blank" href="https://www.youtube.com/@clausinck">YouTube</a> and <a target="_blank" href="https://www.strava.com/athletes/107160155">Strava</a>.
+      </span>
+      <span data-lang="pt">
+        Me encontre no <a target="_blank" href="https://www.youtube.com/@clausinck">YouTube</a> e no <a target="_blank" href="https://www.strava.com/athletes/107160155">Strava</a>.
       </span>
     </p>
 
@@ -186,7 +182,11 @@
   <script>
     function setLang(lang) {
       document.querySelectorAll('[data-lang]').forEach(el => {
-        el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+        el.classList.remove('active');
+      });
+
+      document.querySelectorAll(`[data-lang="${lang}"]`).forEach(el => {
+        el.classList.add('active');
       });
 
       document.getElementById('btn-en').classList.toggle('active', lang === 'en');
