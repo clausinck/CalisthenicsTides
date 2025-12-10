@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Claus Inck</title>
 
-  <link class="googlefont" href="https://fonts.googleapis.com/css2?family=Chivo:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
     * {
@@ -15,8 +15,8 @@
     }
 
     body {
-      background: #e6f7ff; /* azul claro, lembra o oceano */
-      color: #003366; /* azul escuro para contraste */
+      background: #e6f7ff;
+      color: #003366;
       font-family: 'Chivo', sans-serif;
       display: flex;
       align-items: center;
@@ -29,17 +29,40 @@
       padding: 40px;
       text-align: left;
       animation: fadein 1s ease-out forwards;
+      position: relative;
     }
 
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
+    .lang-toggle {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 0.9em;
+    }
+
+    .lang-toggle button {
+      background: none;
+      border: 1px solid #003366;
+      color: #003366;
+      padding: 5px 10px;
+      cursor: pointer;
+      margin-left: 5px;
+      font-weight: bold;
+    }
+
+    .lang-toggle button.active {
+      background: #003366;
+      color: #e6f7ff;
     }
 
     p {
       font-size: 1.2em;
       margin-bottom: 15px;
       line-height: 1.6;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
     }
 
     a {
@@ -49,6 +72,14 @@
 
     a:hover {
       text-decoration: none;
+    }
+
+    [data-lang] {
+      display: none;
+    }
+
+    [data-lang="en"] {
+      display: block;
     }
 
     @keyframes fadein {
@@ -66,27 +97,101 @@
 
 <body>
   <div class="container">
-    <h1>Hello. I'm Claus Inck.</h1>
-    
-    <p>Master in Biological Oceanography, calisthenics enthusiast, runner, and advocate for healthy living.</p>
-    
-    <p>My professional life is dedicated to researching the ocean, especially the study of zooplankton communities and their relationship with climate change.</p>
-    
-    <p>In my free time, I practice calisthenics, striving to evolve with mindfulness and discipline.</p>
-    
-    <p>I also value maintaining a balanced diet as an essential part of my health and well-being.</p>
-    
-    <p>Some ideas that guide me: the ocean teaches resilience, movement cultivates strength, and curiosity drives progress.</p>
-    
-    <p>Current goal: to deepen my studies in oceanography and master new calisthenics movements.</p>
-    
-    <p>Monthly recommendation: the book <strong>Autobiography of a Yogi</strong>.</p>
-    
-    <p>Quote that inspires me: <em>"No water, no life. No blue, no green." — Sylvia Earle</em></p>
-    
-    <p>Find me on <a target="_blank" href="https://www.youtube.com/@clausinck">YouTube</a> and <a target="_blank" href="https://www.strava.com/athletes/107160155">Strava</a>.</p>
+
+    <div class="lang-toggle">
+      <button id="btn-en" class="active" onclick="setLang('en')">EN</button>
+      <button id="btn-pt" onclick="setLang('pt')">PT</button>
+    </div>
+
+    <h1>
+      <span data-lang="en">Hello. I'm Claus Inck.</span>
+      <span data-lang="pt">Olá. Eu sou Claus Inck.</span>
+    </h1>
+
+    <p>
+      <span data-lang="en">
+        Master in Biological Oceanography, calisthenics enthusiast, runner, and advocate for healthy living.
+      </span>
+      <span data-lang="pt">
+        Mestre em Oceanografia Biológica, entusiasta da calistenia, corredor e defensor de um estilo de vida saudável.
+      </span>
+    </p>
+
+    <p>
+      <span data-lang="en">
+        My professional life is dedicated to ocean research, with a special focus on zooplankton communities and their relationship with climate change.
+      </span>
+      <span data-lang="pt">
+        Minha vida profissional é dedicada à pesquisa oceanográfica, com foco especial nas comunidades de zooplâncton e sua relação com as mudanças climáticas.
+      </span>
+    </p>
+
+    <p>
+      <span data-lang="en">
+        In my free time, I practice calisthenics and running, seeking continuous improvement through discipline, movement, and mindfulness.
+      </span>
+      <span data-lang="pt">
+        No tempo livre, pratico calistenia e corrida, buscando evolução contínua por meio da disciplina, do movimento e da atenção plena.
+      </span>
+    </p>
+
+    <p>
+      <span data-lang="en">
+        I am inspired by initiatives such as 
+        <a target="_blank" href="https://communications-assets.unglobalcompact.org/docs/publications/PlanktonManifesto_MG_DIGITAL-2.pdf">
+          The Plankton Manifesto
+        </a>, 
+        which highlights the fundamental role of plankton in sustaining life on Earth.
+      </span>
+      <span data-lang="pt">
+        Sou inspirado por iniciativas como o 
+        <a target="_blank" href="https://communications-assets.unglobalcompact.org/docs/publications/PlanktonManifesto_MG_DIGITAL-2.pdf">
+          Manifesto do Plâncton
+        </a>, 
+        que destaca o papel fundamental do plâncton na sustentação da vida na Terra.
+      </span>
+    </p>
+
+    <p>
+      <span data-lang="en">
+        Current goals: consolidate the muscle-up in calisthenics and run 5 km under 20 minutes.
+      </span>
+      <span data-lang="pt">
+        Objetivos atuais: consolidar o muscle-up na calistenia e correr 5 km abaixo de 20 minutos.
+      </span>
+    </p>
+
+    <p>
+      <span data-lang="en">
+        Quote that inspires me: <em>"No water, no life. No blue, no green." — Sylvia Earle</em>
+      </span>
+      <span data-lang="pt">
+        Frase que me inspira: <em>"Sem água não há vida. Sem azul não há verde." — Sylvia Earle</em>
+      </span>
+    </p>
+
+    <p>
+      <span data-lang="en">
+        Find me on <a target="_blank" href="https://www.youtube.com/@clausinck">YouTube</a> and 
+        <a target="_blank" href="https://www.strava.com/athletes/107160155">Strava</a>.
+      </span>
+      <span data-lang="pt">
+        Me encontre no <a target="_blank" href="https://www.youtube.com/@clausinck">YouTube</a> e no 
+        <a target="_blank" href="https://www.strava.com/athletes/107160155">Strava</a>.
+      </span>
+    </p>
+
   </div>
+
+  <script>
+    function setLang(lang) {
+      document.querySelectorAll('[data-lang]').forEach(el => {
+        el.style.display = el.getAttribute('data-lang') === lang ? 'block' : 'none';
+      });
+
+      document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+      document.getElementById('btn-pt').classList.toggle('active', lang === 'pt');
+    }
+  </script>
 </body>
 </html>
-
-
